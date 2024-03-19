@@ -4,6 +4,7 @@ $mobile-breakpoint: 768px;
 .page {
     padding: 0 2rem;
     display: flex;
+    gap: 4rem;
     flex-direction: column;
 
     @media (max-width: $tablet-breakpoint) { padding: 0 1rem; }
