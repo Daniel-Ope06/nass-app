@@ -1,1 +1,45 @@
-<p>registration-form works!</p>
+<form #regForm (submit)="submit()">
+    <h3 class="form-title">Register for NASS</h3>
+    <p class="form-subtitle">As a science student of Elizade University, feel free to enjoy the benefit of joining this association.</p>
+
+    <div class="form-input-flex">
+        <input class="form-input-text" type="text" name="name" placeholder="Full Name" [(ngModel)]="student.fullName" required/>
+    </div>
+
+    <div class="form-input-flex">
+        <input class="form-input-text" type="text" name="matric-number" placeholder="Matric Number" [(ngModel)]="student.matricNumber" [style.text-transform]="'uppercase'" required/>
+        @if(showMatricNumberError) { <span class="error-msg">Please enter a valid matric number.<br/>E.g: EU123456-1234.</span> }
+    </div>
+
+    <div class="form-input-select">
+        <select title="select you current level" (change)="onLevelChange($event)" required>
+            <option value="" disabled selected>Level</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+        </select>
+        <img src="../../../../../assets/icons/caret-down.png" alt="dropdown"/>
+    </div>
+
+    <div class="form-input-select">
+        <select class="form-input-select" title="select you department" (change)="onDepartmentChange($event)" required>
+            <option value="" disabled selected>Department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <option value="Biotechnology">Biotechnology</option>
+            <option value="Biochemistry">Biochemistry</option>
+            <option value="Microbiology">Microbiology</option>
+            <option value="Applied Geophysics">Applied Geophysics</option>
+            <option value="Environmental Management and Toxicology">Environmental Management and Toxicology</option>
+        </select>
+        <img src="../../../../../assets/icons/caret-down.png" alt="dropdown"/>
+    </div>
+
+    <div class="form-input-flex">
+        <input class="form-input-text" type="email" name="email" placeholder="School Email" [(ngModel)]="student.schoolEmail" [style.text-transform]="'lowercase'" required/>
+        @if(showSchoolEmailError) { <span class="error-msg">Please enter an email ending in:<br/>'&#64;elizadeuniversity.edu.ng'</span> }
+    </div>
+
+    <button class="form-btn" type="submit" [disabled]="!canSubmit()">Register</button>
+</form>

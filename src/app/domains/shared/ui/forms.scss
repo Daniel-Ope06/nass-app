@@ -1,0 +1,134 @@
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 768px;
+
+.form-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+}
+
+.form-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    opacity: 0.5;
+    margin: 0;
+}
+
+.form-btn {
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1rem 0;
+    background-color: #25335D;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: lighten(#25335D, 10%);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: #D0D0D0;
+        &:hover { background-color: #D0D0D0; }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        &:hover {
+            background-color: #25335D;
+        }
+    }
+}
+
+.form-input {
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #D0D0D0;
+    background-color: rgba(239, 239, 239, 0.7);
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+
+    &:focus {
+        outline: none;
+        border: 1px solid #161616;
+    }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 50px #EFEFEF inset;
+        -webkit-text-fill-color: #000000;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 1rem 0.75rem;
+        font-size: 1rem;
+    }
+}
+
+.form-input-text {
+    @extend .form-input;
+
+    &::placeholder {
+        color: #000000;
+        opacity: 0.5;
+    }
+}
+
+.form-input-select {
+    position: relative;
+
+    select {
+        appearance: none; // reset default select styles
+        @extend .form-input;
+        width: 100%;
+        cursor: pointer;
+
+        option {
+            color: rgba(0,0,0,0.5);
+            &:disabled { color: rgba(0,0,0,0.25); }
+            img { border: 2px solid red; }
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+        z-index: -10;
+        height: 1.5rem;
+        object-fit: contain;
+    }
+}
+
+.form-input-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error-msg {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FF0000;
+    margin: 0;
+    padding-left: 0.75rem;
+
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 0.875rem;
+        padding-left: 0.5rem;
+    }
+}
