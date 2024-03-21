@@ -1,0 +1,63 @@
+@import url("../../../shared/ui/forms.scss");
+
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 768px;
+
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+
+    width: 100vw;
+    height: 100svh;
+
+    display: grid;
+    place-items: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px) saturate(180%);
+    -webkit-backdrop-filter: blur(4px) saturate(180%);
+}
+
+.modal {
+    width: 25rem;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    @media (max-width: $mobile-breakpoint) {
+        width: calc(100vw - 4rem);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+    padding: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    background-color: transparent;
+
+    img {
+        height: 2rem;
+        object-fit: contain;
+    }
+}
+
+.form-subtitle a,
+.form-subtitle strong,
+.form-subtitle em {
+    font-weight: 700;
+}
