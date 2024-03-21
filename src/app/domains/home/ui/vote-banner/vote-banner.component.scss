@@ -61,6 +61,15 @@ section {
         transform: rotate(-45deg);
     }
 
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    &:disabled:hover {
+        span { text-decoration: none; }
+    }
+
     &:hover {
         span { text-decoration: underline; }
     }
