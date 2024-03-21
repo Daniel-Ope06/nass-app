@@ -8,7 +8,12 @@
 
     <div class="form-input-flex">
         <input class="form-input-text" type="text" name="matric-number" placeholder="Matric Number" [(ngModel)]="student.matricNumber" [style.text-transform]="'uppercase'" required/>
-        @if(showMatricNumberError) { <span class="error-msg">Please enter a valid matric number.<br/>E.g: EU123456-1234.</span> }
+        @if(showMatricNumberError) { <span class="error-msg">{{ matricErrorMessage }}</span> }
+    </div>
+
+    <div class="form-input-flex">
+        <input class="form-input-text" type="email" name="email" placeholder="School Email" [(ngModel)]="student.schoolEmail" [style.text-transform]="'lowercase'" required/>
+        @if(showSchoolEmailError) { <span class="error-msg">Invalid email. E.g: student&#64;elizadeuniversity.edu.ng</span> }
     </div>
 
     <div class="form-input-select">
@@ -34,11 +39,6 @@
             <option value="Environmental Management and Toxicology">Environmental Management and Toxicology</option>
         </select>
         <img src="../../../../../assets/icons/caret-down.png" alt="dropdown"/>
-    </div>
-
-    <div class="form-input-flex">
-        <input class="form-input-text" type="email" name="email" placeholder="School Email" [(ngModel)]="student.schoolEmail" [style.text-transform]="'lowercase'" required/>
-        @if(showSchoolEmailError) { <span class="error-msg">Please enter an email ending in:<br/>'&#64;elizadeuniversity.edu.ng'</span> }
     </div>
 
     <button class="form-btn" type="submit" [disabled]="!canSubmit()">Register</button>

@@ -1,6 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Student } from '../../data-access/student.model';
+import { StudentService } from '../../data-access/student.service';
 
 @Component({
   selector: 'registration-form',
@@ -12,6 +13,8 @@ import { Student } from '../../data-access/student.model';
 export class RegistrationFormComponent {
   @ViewChild('regForm') form!: ElementRef<HTMLFormElement>;
 
+  private studentService: StudentService = inject(StudentService);
+
   student: Student = {
     fullName: '',
     matricNumber: '',
@@ -21,8 +24,9 @@ export class RegistrationFormComponent {
     verified: false
   }
 
-  showMatricNumberError = false;
-  showSchoolEmailError = false;
+  matricErrorMessage: string = '';
+  showMatricNumberError: boolean = false;
+  showSchoolEmailError : boolean= false;
 
   onLevelChange(event: any) {
     this.student.level = event.target.value;
@@ -42,14 +46,20 @@ export class RegistrationFormComponent {
     );
   }
 
-  submit() {
+  async submit() {
     if (this.isSchoolEmailValid() && this.isMatricNumberValid()) {
       // remove error messages
       this.showMatricNumberError = false;
       this.showSchoolEmailError = false;
 
       // register student
-      console.log('registered');
+      if (await this.studentService.isMatricNumberRegistered(this.student.matricNumber)) {
+        this.matricErrorMessage = 'Matric number already registered';
+        this.showMatricNumberError = true;
+        return;
+      } else {
+        this.studentService.registerStudent(this.student);
+      }
 
       // reset form
       this.form.nativeElement.reset();
@@ -60,6 +70,7 @@ export class RegistrationFormComponent {
       this.student.schoolEmail = '';
     } else {
       // show error messages
+      this.matricErrorMessage = 'Invalid matric number. E.g: EU123456-2024';
       this.showMatricNumberError = !this.isMatricNumberValid();
       this.showSchoolEmailError = !this.isSchoolEmailValid();
     }
