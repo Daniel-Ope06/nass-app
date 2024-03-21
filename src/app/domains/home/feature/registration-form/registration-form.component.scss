@@ -9,4 +9,6 @@ form {
     flex-direction: column;
     :nth-child(3){ margin-top: 1rem; }
     .form-btn { margin-top: 1.5rem; }
+    #matric-input::placeholder,
+    #email::placeholder { text-transform: capitalize; }
 }

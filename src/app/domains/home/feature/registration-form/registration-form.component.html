@@ -7,12 +7,12 @@
     </div>
 
     <div class="form-input-flex">
-        <input class="form-input-text" type="text" name="matric-number" placeholder="Matric Number" [(ngModel)]="student.matricNumber" [style.text-transform]="'uppercase'" required/>
+        <input class="form-input-text" type="text" name="matric-number" placeholder="Matric Number" [(ngModel)]="student.matricNumber" id="matric-input" [style.text-transform]="'uppercase'" required/>
         @if(showMatricNumberError) { <span class="error-msg">{{ matricErrorMessage }}</span> }
     </div>
 
     <div class="form-input-flex">
-        <input class="form-input-text" type="email" name="email" placeholder="School Email" [(ngModel)]="student.schoolEmail" [style.text-transform]="'lowercase'" required/>
+        <input class="form-input-text" type="email" name="email" placeholder="School Email" [(ngModel)]="student.schoolEmail" id="email" [style.text-transform]="'lowercase'" required/>
         @if(showSchoolEmailError) { <span class="error-msg">Invalid email. E.g: student&#64;elizadeuniversity.edu.ng</span> }
     </div>
 
