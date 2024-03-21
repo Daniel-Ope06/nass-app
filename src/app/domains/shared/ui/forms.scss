@@ -87,6 +87,12 @@ $mobile-breakpoint: 768px;
     }
 }
 
+.form-input-textarea {
+    @extend .form-input-text;
+    height: 5rem;
+    resize: none;
+}
+
 .form-input-select {
     position: relative;
 
@@ -123,7 +129,7 @@ $mobile-breakpoint: 768px;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    color: #FF0000;
+    color: #C03221;
     margin: 0;
     padding-left: 0.75rem;
 
@@ -131,4 +137,12 @@ $mobile-breakpoint: 768px;
         font-size: 0.875rem;
         padding-left: 0.25rem;
     }
+}
+
+.confirm-msg {
+    @extend .error-msg;
+    color: #1A936F;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    &.show { opacity: 1; }
 }
