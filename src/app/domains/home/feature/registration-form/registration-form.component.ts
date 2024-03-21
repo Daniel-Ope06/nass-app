@@ -60,7 +60,7 @@ export class RegistrationFormComponent {
         this.showMatricNumberError = true;
         return;
       } else {
-        this.studentService.registerStudent(this.student);
+        await this.studentService.registerStudent(this.student);
         this.showVerifyModal = true;
       }
 
