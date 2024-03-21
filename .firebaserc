@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "nass-eu"
+  },
+  "targets": {
+    "nass-eu": {
+      "hosting": {
+        "nass-app": [
+          "nass-eu"
+        ]
+      }
+    }
+  }
+}

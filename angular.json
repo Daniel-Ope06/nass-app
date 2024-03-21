@@ -116,6 +116,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "nass-app:build:production",
+              "serveTarget": "nass-app:serve:production"
+            },
+            "development": {
+              "buildTarget": "nass-app:build:development",
+              "serveTarget": "nass-app:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
