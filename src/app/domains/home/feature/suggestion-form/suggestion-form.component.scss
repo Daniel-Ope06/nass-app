@@ -1,0 +1,16 @@
+@import url("../../../shared/ui/forms.scss");
+
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 768px;
+
+form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    :nth-child(2){ margin-top: 1.5rem; }
+    #email::placeholder { text-transform: capitalize; }
+    .form-input-flex {
+        gap: 0;
+        .error-msg { margin-top: 0.25rem; }
+    }
+}
