@@ -2,11 +2,12 @@ import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Student } from '../../data-access/student.model';
 import { StudentService } from '../../data-access/student.service';
+import { VerifyModalComponent } from '../../ui/verify-modal/verify-modal.component';
 
 @Component({
   selector: 'registration-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, VerifyModalComponent],
   templateUrl: './registration-form.component.html',
   styleUrl: './registration-form.component.scss'
 })
@@ -27,6 +28,7 @@ export class RegistrationFormComponent {
   matricErrorMessage: string = '';
   showMatricNumberError: boolean = false;
   showSchoolEmailError : boolean= false;
+  showVerifyModal: boolean = false;
 
   onLevelChange(event: any) {
     this.student.level = event.target.value;
@@ -59,6 +61,7 @@ export class RegistrationFormComponent {
         return;
       } else {
         this.studentService.registerStudent(this.student);
+        this.showVerifyModal = true;
       }
 
       // reset form

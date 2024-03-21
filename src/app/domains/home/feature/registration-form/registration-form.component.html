@@ -43,3 +43,5 @@
 
     <button class="form-btn" type="submit" [disabled]="!canSubmit()">Register</button>
 </form>
+
+@if(showVerifyModal) { <verify-modal (hideEvent)="showVerifyModal = false"/> }
