@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Suggestion } from '../../data-access/suggestion.model';
-import { SuggestionService } from '../../data-access/suggestion.service';
+import { Suggestion } from '../../data-access/suggestions/suggestion.model';
+import { SuggestionService } from '../../data-access/suggestions/suggestion.service';
 
 @Component({
   selector: 'suggestion-form',
