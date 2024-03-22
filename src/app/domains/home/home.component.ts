@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 // Import home domain components
+import { EventsSliderComponent } from './ui/events-slider/events-slider.component';
 import { FormsSliderComponent } from './ui/forms-slider/forms-slider.component';
 import { GoalSectionComponent } from './ui/goal-section/goal-section.component';
 import { RegistrationFormComponent } from './feature/registration-form/registration-form.component';
@@ -11,6 +12,7 @@ import { VoteBannerComponent } from './ui/vote-banner/vote-banner.component';
   selector: 'home',
   standalone: true,
   imports: [
+    EventsSliderComponent,
     FormsSliderComponent,
     GoalSectionComponent,
     RegistrationFormComponent,
