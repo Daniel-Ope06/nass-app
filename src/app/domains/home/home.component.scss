@@ -2,14 +2,11 @@ $tablet-breakpoint: 1024px;
 $mobile-breakpoint: 768px;
 
 .page {
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     display: flex;
     gap: 4rem;
     flex-direction: column;
-
-    #join { margin-top: 2rem; }
-
-    @media (max-width: $tablet-breakpoint) { padding: 0 1rem; }
+    @media (max-width: $tablet-breakpoint) { padding: 1rem; }
 }
 
 .sub-page {
