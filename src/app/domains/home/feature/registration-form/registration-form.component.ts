@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Student } from '../../data-access/student.model';
-import { StudentService } from '../../data-access/student.service';
+import { Student } from '../../data-access/students/student.model';
+import { StudentService } from '../../data-access/students/student.service';
 import { VerifyModalComponent } from '../../ui/verify-modal/verify-modal.component';
 
 @Component({
