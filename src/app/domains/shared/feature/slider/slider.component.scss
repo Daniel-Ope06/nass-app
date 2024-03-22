@@ -1,0 +1,133 @@
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 768px;
+
+section {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.slides-list {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slide {
+    flex-shrink: 0;
+    width: calc(100vw / 3);
+    scroll-snap-align: start;
+
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 1rem;
+    background: #F6F6F6;
+
+    @media (max-width: $mobile-breakpoint) {
+        width: calc(100vw - 7rem);
+    }
+}
+
+.slide .title-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+    text-wrap: balance;
+    @media (max-width: $mobile-breakpoint) { font-size: 0.875rem; }
+}
+
+.slide img {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.slide button {
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+        width: 4rem;
+        object-fit: contain;
+        transform: rotate(-45deg) translate(-1rem, -0.75rem);
+        filter: brightness(0); // convert to black
+    }
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
+    :nth-child(3) { margin-left: -0.25rem; }
+
+    @media (max-width: $mobile-breakpoint) {
+       display: none;
+   }
+}
+
+.btn-group button {
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    width: 3.75rem;
+    height: 3.75rem;
+
+    display: grid;
+    place-items: center;
+
+    background-color: #25335D;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    img {
+        width: 2rem;
+        object-fit: contain;
+    }
+
+    &:nth-child(1) img { rotate: 180deg; }
+
+    &:hover {
+        background-color: lighten(#25335D, 10%);
+    }
+
+   &:disabled {
+        background-color: #E7E7E7;
+        cursor: not-allowed;
+        img { filter: brightness(0); }
+   }
+
+   &:disabled:hover {
+        background-color: #E7E7E7;
+   }
+}
+
+.small-circle {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: #E7E7E7;
+}

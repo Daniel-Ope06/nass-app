@@ -1,1 +1,20 @@
-<p>slider works!</p>
+<section>
+    <div class="slides-list" #sliderRef (scroll)="onScroll()">
+        @for (slide of slides; track slide.contentSourceUrl) {
+            <div class="slide">
+                <div class="title-row">
+                    <h3>{{ slide.displayTitle }}</h3>
+                    <button title="open" (click)="openForm(slide.contentSourceUrl)"><img src="../../../../../assets/icons/arrow-right.png" alt="arrow-right"/></button>
+                </div>
+                <img src="{{ slide.previewImageUrl }}">
+            </div>
+        }
+    </div>
+
+    <div class="btn-group">
+        <button class="left-btn" (click)="scrollLeft()" [disabled]="isLeftScrollDisabled"><img src="../../../../../assets/icons/arrow-right.png" alt="arrow-right"/></button>
+        <div class="small-circle"></div>
+        <div class="small-circle"></div>
+        <button class="right-btn" (click)="scrollRight()" [disabled]="isRightScrollDisabled"><img src="../../../../../assets/icons/arrow-right.png" alt="arrow-right"/></button>
+    </div>
+</section>
