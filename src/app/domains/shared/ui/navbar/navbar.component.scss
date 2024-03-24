@@ -1,17 +1,19 @@
 $tablet-breakpoint: 1024px;
 $mobile-breakpoint: 768px;
 
-nav {
-    // border: 2px solid red;
+.nav-desktop {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #FFFFFF;
     padding: 1rem 0 0.5rem 0;
+
+    @media (max-width: $mobile-breakpoint) {
+        display: none;
+    }
 }
 
 .logo{
-    // border: 2px solid purple;
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -20,7 +22,6 @@ nav {
     img {
         height: 3rem;
         object-fit: contain;
-        // border: 2px solid green;
     }
 
     span {
@@ -33,7 +34,6 @@ nav {
 }
 
 .nav-list {
-    // border: 2px solid green;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -57,7 +57,7 @@ nav {
     align-items: center;
 
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0.75rem;
     padding: 0.95rem 0.75rem;
     background-color: #25335D;
 
@@ -89,4 +89,68 @@ nav {
     }
 }
 
+
+/**********************************/
+
+.nav-mobile {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 1rem 0 0.5rem 0;
+
+    position: relative;
+    // visibility: hidden;
+
+    @media (max-width: $mobile-breakpoint) {
+        // visibility: visible;
+        display: flex;
+    }
+}
+
+.nav-list-mobile {
+    position: absolute;
+    top: calc(100% - 0.15rem);
+    left: -1rem;
+    width: 100vw;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+   
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    &.open {
+        opacity: 1;
+        padding: 1rem 0;
+        height: calc(50vh - 4rem);
+    }
+    
+}
+
+.nav-toggle-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    img {
+        height: 3rem;
+        object-fit: contain;
+    }
+}
+
+.nav-mobile .nav-item {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.nav-mobile .nav-item-btn {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
 

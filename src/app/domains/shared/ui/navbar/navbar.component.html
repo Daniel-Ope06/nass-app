@@ -1,9 +1,8 @@
-<nav>
+<nav class="nav-desktop">
     <a class="logo" href="#">
         <img src="../../../../../assets/logos/nass.png" alt="NASS Logo"/>
         <span>in Elizade University</span>
     </a>
-   
 
     <div class="nav-list">
         <a class="nav-item" href="#events">Events</a>
@@ -11,6 +10,30 @@
         <a class="nav-item" href="#suggestion">Suggestion</a>
         <a class="nav-item" href="#vote">Vote</a>
         <a class="nav-item-btn" href="#join">
+            <span>Join for FREE</span>
+            <img src="../../../../../assets/icons/arrow-right.png" alt="arrow-right"/>
+        </a>
+    </div>
+</nav>
+
+
+
+<nav class="nav-mobile">
+    <a class="logo" href="#" (click)="closeMenu()">
+        <img src="../../../../../assets/logos/nass.png" alt="NASS Logo"/>
+        <span>in Elizade University</span>
+    </a>
+
+    <button class="nav-toggle-btn">
+        <img src="../../../../../assets/icons/menu.png" alt="menu" (click)="toggleMenu()"/>
+    </button>
+
+    <div class="nav-list-mobile" [class.open]="isMenuOpen">
+        <a class="nav-item" href="#events" (click)="closeMenu()">Events</a>
+        <a class="nav-item" href="#forms" (click)="closeMenu()">Forms</a>
+        <a class="nav-item" href="#suggestion" (click)="closeMenu()">Suggestion</a>
+        <a class="nav-item" href="#vote" (click)="closeMenu()">Vote</a>
+        <a class="nav-item-btn" href="#join" (click)="closeMenu()">
             <span>Join for FREE</span>
             <img src="../../../../../assets/icons/arrow-right.png" alt="arrow-right"/>
         </a>
