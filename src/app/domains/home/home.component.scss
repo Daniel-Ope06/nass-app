@@ -4,11 +4,26 @@ $tablet-breakpoint: 1024px;
 $mobile-breakpoint: 768px;
 
 .page {
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     display: flex;
-    gap: 4rem;
     flex-direction: column;
-    @media (max-width: $tablet-breakpoint) { padding: 1rem; }
+
+    vote-banner { padding-top: 4rem; }
+
+    app-navbar {
+        position: fixed;
+        left: 2rem;
+        z-index: 100;
+        width: calc(100% - 4rem);
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: 0 1rem;
+        app-navbar {
+            left: 1rem;
+            width: calc(100% - 2rem);
+        }
+    }
 }
 
 .sub-page {
@@ -17,6 +32,7 @@ $mobile-breakpoint: 768px;
     flex-direction: column;
     align-items: flex-start;
 
+    padding-top: 6rem;
     .left-padding { padding-left: 3.25rem; }
 
     .center {
@@ -56,6 +72,7 @@ $mobile-breakpoint: 768px;
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
+    margin-top: 5rem;
 
     .text-row {
         display: flex;

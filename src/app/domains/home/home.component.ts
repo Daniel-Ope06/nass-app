@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 // Import home domain components
 import { EventsSliderComponent } from './ui/events-slider/events-slider.component';
@@ -26,6 +26,25 @@ import { VoteBannerComponent } from './ui/vote-banner/vote-banner.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
 
+  ngAfterViewInit() {
+    this.restoreScrollPosition();
+  }
+
+  restoreScrollPosition() {
+    const url = window.location.href;
+
+    // check if there is a # in the url
+    if (url.includes('#')) {
+      const hash = url.substring(url.indexOf('#') + 1);
+      const element = document.getElementById(hash);
+
+      // if the element exists
+      if (element) {
+        // scroll to the element
+        element.scrollIntoView();
+      }
+    }
+  }
 }
