@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 
 // Import home domain components
 import { EventsSliderComponent } from './ui/events-slider/events-slider.component';
+import { FooterComponent } from '../shared/ui/footer/footer.component';
 import { FormsSliderComponent } from './ui/forms-slider/forms-slider.component';
 import { GoalSectionComponent } from './ui/goal-section/goal-section.component';
 import { HeroCarouselComponent } from './ui/hero-carousel/hero-carousel.component';
@@ -15,6 +16,7 @@ import { VoteBannerComponent } from './ui/vote-banner/vote-banner.component';
   standalone: true,
   imports: [
     EventsSliderComponent,
+    FooterComponent,
     FormsSliderComponent,
     GoalSectionComponent,
     HeroCarouselComponent,
