@@ -1,0 +1,38 @@
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 768px;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-item {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+    opacity: 0.5;
+
+    img {
+        margin-top: 0.25rem;
+        height: 1.5rem;
+        object-fit: contain;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        span { font-size: 1rem; }
+        img { height: 1rem; }
+    }
+}
+
+a.footer-item { 
+    cursor: pointer;
+    width: fit-content;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+}
