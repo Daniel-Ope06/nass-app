@@ -12,15 +12,18 @@ $mobile-breakpoint: 768px;
 
     app-navbar {
         position: fixed;
-        left: 2rem;
+        left: 0;
         z-index: 100;
+
+        padding: 0 2rem;
         width: calc(100% - 4rem);
+        background-color: #FFFFFF;
     }
 
     @media (max-width: $tablet-breakpoint) {
         padding: 0 1rem;
         app-navbar {
-            left: 1rem;
+            padding: 0 1rem;
             width: calc(100% - 2rem);
         }
     }
@@ -70,9 +73,9 @@ $mobile-breakpoint: 768px;
 
 .hero-section {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     flex-direction: column;
-    margin-top: 6rem;
+    margin-top: 7rem;
 
     .text-row {
         display: flex;
@@ -92,6 +95,7 @@ $mobile-breakpoint: 768px;
     }
 
     @media (max-width: $mobile-breakpoint) {
+        margin-top: 6rem;
         .text-row {
             flex-direction: column;
             justify-content: unset;
