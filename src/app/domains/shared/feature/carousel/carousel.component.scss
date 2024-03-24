@@ -3,8 +3,6 @@ $mobile-breakpoint: 768px;
 
 section {
     width: 100%;
-    overflow: hidden;
-    border-radius: 1rem;
     position: relative;
 }
 
@@ -15,6 +13,7 @@ section {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    border-radius: 1rem;
 }
 
 .carousel img {
@@ -40,7 +39,9 @@ section {
     :nth-child(3) { margin-left: -0.25rem; }
 
     @media (max-width: $mobile-breakpoint) {
-       display: none;
+        bottom: -5rem;
+        right: calc(50% + 0.5rem);
+        transform: translateX(50%);
    }
 }
 
