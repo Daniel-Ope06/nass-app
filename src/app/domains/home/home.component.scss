@@ -54,7 +54,7 @@ $mobile-breakpoint: 768px;
 
 .hero-section {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-direction: column;
 
     .text-row {
@@ -66,11 +66,12 @@ $mobile-breakpoint: 768px;
             text-wrap: balance;
         }
 
-        .form-subtitle { width: 50%; }
+        .form-subtitle { width: 65%; }
     }
 
     @media (max-width: $tablet-breakpoint) {
         .text-row .form-title { width: 45%; }
+        .form-subtitle { width: 50%; }
     }
 
     @media (max-width: $mobile-breakpoint) {
