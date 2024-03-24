@@ -1,3 +1,5 @@
+@import url("../shared/ui/forms.scss");
+
 $tablet-breakpoint: 1024px;
 $mobile-breakpoint: 768px;
 
@@ -50,17 +52,35 @@ $mobile-breakpoint: 768px;
     background-color: #E7B012;
 }
 
-.subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 2.25rem;
-    color: #000000;
-    text-wrap: balance;
-    margin: 0;
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .text-row {
+        display: flex;
+        justify-content: space-between;
+
+        .form-title {
+            width: 30%;
+            text-wrap: balance;
+        }
+
+        .form-subtitle { width: 50%; }
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+        .text-row .form-title { width: 45%; }
+    }
 
     @media (max-width: $mobile-breakpoint) {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
+        .text-row {
+            flex-direction: column;
+            justify-content: unset;
+            gap: 1rem;
+
+            .form-title { width: 100%; }
+            .form-subtitle { width: 100%; }
+        }
     }
 }
