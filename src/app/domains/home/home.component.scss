@@ -54,8 +54,8 @@ $mobile-breakpoint: 768px;
 
 .hero-section {
     display: flex;
+    gap: 2rem;
     flex-direction: column;
-    gap: 1rem;
 
     .text-row {
         display: flex;
