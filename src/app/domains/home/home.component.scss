@@ -63,7 +63,6 @@ $mobile-breakpoint: 768px;
         .center { width: 100%; }
         .slider { width: calc(100% + 1rem); }
         margin-top: -2rem;
-        &#join { margin-top: -4rem; }
     }
 }
 
@@ -108,7 +107,7 @@ $mobile-breakpoint: 768px;
 
     @media (max-width: $mobile-breakpoint) {
         margin-top: 6rem;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         .text-row {
             flex-direction: column;
             justify-content: unset;
