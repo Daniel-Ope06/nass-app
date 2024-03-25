@@ -9,23 +9,37 @@ section {
 .carousel {
     display: flex;
     align-items: center;
+    
     overflow-x: scroll;
+    overflow-y: hidden;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+
     border-radius: 1rem;
+    animation: skeleton-loading 1s linear infinite alternate;
+    aspect-ratio: 12 / 5;
+
+    @media (max-width: $mobile-breakpoint) {
+        aspect-ratio: 2 / 1;
+    }
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: #F0F0F0;
+    }
+    100% {
+        background-color: #E0E0E0;
+    }
 }
 
 .carousel img {
     flex-shrink: 0;
     width: 100%;
-    aspect-ratio: 12 / 5;
     object-fit: cover;
     scroll-snap-align: start;
-
-    @media (max-width: $mobile-breakpoint) {
-        aspect-ratio: 2 / 1;
-    }
 }
 
 .btn-group {
