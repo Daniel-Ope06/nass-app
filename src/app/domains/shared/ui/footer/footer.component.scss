@@ -35,4 +35,8 @@ a.footer-item {
     width: fit-content;
     text-decoration: none;
     &:hover { text-decoration: underline; }
+
+    @media (max-width: $mobile-breakpoint) {
+        text-decoration: underline;
+    }
 }
