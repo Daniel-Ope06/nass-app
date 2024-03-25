@@ -8,11 +8,11 @@ $mobile-breakpoint: 768px;
     display: flex;
     flex-direction: column;
 
-    vote-banner { padding-top: 4rem; }
+    vote-banner { padding-top: 8rem; }
 
     app-footer {
-        padding-top: 4rem;
-        padding-bottom: 2rem;
+        padding-top: 8rem;
+        padding-bottom: 4rem;
     }
 
     app-navbar {
@@ -27,7 +27,11 @@ $mobile-breakpoint: 768px;
 
     @media (max-width: $tablet-breakpoint) {
         padding: 0 1rem;
-        app-footer { padding-bottom: 6rem; }
+        app-footer {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
         app-navbar {
             padding: 0 1rem;
             width: calc(100% - 2rem);
@@ -41,7 +45,8 @@ $mobile-breakpoint: 768px;
     flex-direction: column;
     align-items: flex-start;
 
-    padding-top: 6rem;
+    padding-top: 7rem;
+    margin-top: 3rem;
     .left-padding { padding-left: 3.25rem; }
 
     .center {
@@ -62,7 +67,8 @@ $mobile-breakpoint: 768px;
     @media (max-width: $mobile-breakpoint) {
         .center { width: 100%; }
         .slider { width: calc(100% + 1rem); }
-        margin-top: -2rem;
+        padding-top: 6rem;
+        margin-top: 2rem;
     }
 }
 
@@ -107,7 +113,7 @@ $mobile-breakpoint: 768px;
 
     @media (max-width: $mobile-breakpoint) {
         margin-top: 6rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         .text-row {
             flex-direction: column;
             justify-content: unset;
