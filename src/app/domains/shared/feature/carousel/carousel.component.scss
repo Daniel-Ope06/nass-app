@@ -39,7 +39,7 @@ section {
     :nth-child(3) { margin-left: -0.25rem; }
 
     @media (max-width: $mobile-breakpoint) {
-        bottom: -5rem;
+        bottom: -3.5rem;
         right: calc(50% + 0.5rem);
         transform: translateX(50%);
    }
@@ -79,6 +79,20 @@ section {
    &:disabled:hover {
         background-color: #E7E7E7;
    }
+
+   @media (max-width: $mobile-breakpoint) {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        img {
+            width: 1.25rem;
+            object-fit: contain;
+        }
+
+        &:hover {
+            background-color:#25335D;
+        }
+   }
 }
 
 .small-circle {
@@ -86,4 +100,9 @@ section {
     height: 0.75rem;
     border-radius: 50%;
     background-color: #E7E7E7;
+
+    @media (max-width: $mobile-breakpoint) {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
 }
