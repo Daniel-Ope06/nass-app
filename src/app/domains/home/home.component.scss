@@ -4,123 +4,145 @@ $tablet-breakpoint: 1024px;
 $mobile-breakpoint: 768px;
 
 .page {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+
+  vote-banner {
+    padding-top: 8rem;
+  }
+
+  app-footer {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  app-navbar {
+    position: fixed;
+    left: 0;
+    z-index: 100;
+
     padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
+    width: calc(100% - 4rem);
+    background-color: #ffffff;
+  }
 
-    vote-banner { padding-top: 8rem; }
-
+  @media (max-width: $tablet-breakpoint) {
+    padding: 0 1rem;
     app-footer {
-        padding-top: 8rem;
-        padding-bottom: 4rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
     }
 
     app-navbar {
-        position: fixed;
-        left: 0;
-        z-index: 100;
-
-        padding: 0 2rem;
-        width: calc(100% - 4rem);
-        background-color: #FFFFFF;
+      padding: 0 1rem;
+      width: calc(100% - 2rem);
     }
-
-    @media (max-width: $tablet-breakpoint) {
-        padding: 0 1rem;
-        app-footer {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-        }
-
-        app-navbar {
-            padding: 0 1rem;
-            width: calc(100% - 2rem);
-        }
-    }
+  }
 }
 
 .sub-page {
-    display: flex;
-    gap: 0.75rem;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
 
-    padding-top: 7rem;
-    margin-top: 3rem;
-    .left-padding { padding-left: 3.25rem; }
+  padding-top: 7rem;
+  margin-top: 3rem;
+  .left-padding {
+    padding-left: 3.25rem;
+  }
 
-    .center {
-        width: 25rem;
-        align-self: center;
+  .center {
+    width: 25rem;
+    align-self: center;
+  }
+
+  .slider {
+    overflow: hidden;
+    width: calc(100% - 3.25rem);
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    .left-padding {
+      padding-left: 0;
     }
-
     .slider {
-        overflow: hidden;
-        width: calc(100% - 3.25rem);
+      width: 100%;
     }
+  }
 
-    @media (max-width: $tablet-breakpoint) {
-        .left-padding { padding-left: 0; }
-        .slider { width: 100%; }
+  @media (max-width: $mobile-breakpoint) {
+    .center {
+      width: 100%;
     }
-
-    @media (max-width: $mobile-breakpoint) {
-        .center { width: 100%; }
-        .slider { width: calc(100% + 1rem); }
-        padding-top: 6rem;
-        margin-top: 2rem;
+    .slider {
+      width: calc(100% + 1rem);
     }
+    padding-top: 6rem;
+    margin-top: 2rem;
+  }
 }
 
 .title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 400;
-    color: #FFFFFF;
-    margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
 
-    padding: 0.75rem 1.5rem;
-    border-radius: 100vw;
-    background-color: #E7B012;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100vw;
+  background-color: #e7b012;
 
-    @media (max-width: $mobile-breakpoint) {
-        font-size: 1rem;
-    }
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 1rem;
+  }
 }
 
 .hero-section {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin-top: 7rem;
+
+  .text-row {
     display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    margin-top: 7rem;
+    justify-content: space-between;
 
+    .form-title {
+      width: 30%;
+      text-wrap: balance;
+    }
+
+    .form-subtitle {
+      width: 65%;
+    }
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    .text-row .form-title {
+      width: 45%;
+    }
+    .form-subtitle {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
     .text-row {
-        display: flex;
-        justify-content: space-between;
+      flex-direction: column;
+      justify-content: unset;
+      gap: 1rem;
 
-        .form-title {
-            width: 30%;
-            text-wrap: balance;
-        }
-
-        .form-subtitle { width: 65%; }
+      .form-title {
+        width: 100%;
+      }
+      .form-subtitle {
+        width: 100%;
+      }
     }
-
-    @media (max-width: $tablet-breakpoint) {
-        .text-row .form-title { width: 45%; }
-        .form-subtitle { width: 50%; }
-    }
-
-    @media (max-width: $mobile-breakpoint) {
-        margin-top: 6rem;
-        margin-bottom: 2rem;
-        .text-row {
-            flex-direction: column;
-            justify-content: unset;
-            gap: 1rem;
-
-            .form-title { width: 100%; }
-            .form-subtitle { width: 100%; }
-        }
-    }
+  }
 }

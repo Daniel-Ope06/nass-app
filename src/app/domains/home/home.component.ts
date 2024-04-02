@@ -23,13 +23,12 @@ import { VoteBannerComponent } from './ui/vote-banner/vote-banner.component';
     NavbarComponent,
     RegistrationFormComponent,
     SuggestionFormComponent,
-    VoteBannerComponent
+    VoteBannerComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-
   ngOnInit() {
     this.resetScrollPosition();
   }
