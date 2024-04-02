@@ -9,7 +9,7 @@ import { VerifyModalComponent } from '../../ui/verify-modal/verify-modal.compone
   standalone: true,
   imports: [FormsModule, VerifyModalComponent],
   templateUrl: './registration-form.component.html',
-  styleUrl: './registration-form.component.scss'
+  styleUrl: './registration-form.component.scss',
 })
 export class RegistrationFormComponent {
   @ViewChild('regForm') form!: ElementRef<HTMLFormElement>;
@@ -22,12 +22,12 @@ export class RegistrationFormComponent {
     level: '',
     department: '',
     schoolEmail: '',
-    verified: false
-  }
+    verified: false,
+  };
 
   matricErrorMessage: string = '';
   showMatricNumberError: boolean = false;
-  showSchoolEmailError : boolean= false;
+  showSchoolEmailError: boolean = false;
   showVerifyModal: boolean = false;
 
   onLevelChange(event: any) {
@@ -55,11 +55,19 @@ export class RegistrationFormComponent {
       this.showSchoolEmailError = false;
 
       // register student
-      if (await this.studentService.isMatricNumberRegistered(this.student.matricNumber)) {
+      if (
+        await this.studentService.isMatricNumberRegistered(
+          this.student.matricNumber
+        )
+      ) {
         this.matricErrorMessage = 'Matric number already registered';
         this.showMatricNumberError = true;
         return;
       } else {
+        // clean spaces from input
+        this.student.fullName = this.student.fullName.trim();
+        this.student.matricNumber = this.student.matricNumber.trim();
+        this.student.schoolEmail = this.student.schoolEmail.trim();
         await this.studentService.registerStudent(this.student);
         this.showVerifyModal = true;
       }
@@ -90,7 +98,9 @@ export class RegistrationFormComponent {
       this.student.matricNumber.charAt(8) !== '-' ||
       isNaN(Number(this.student.matricNumber.substring(2, 8))) ||
       isNaN(Number(this.student.matricNumber.substring(9)))
-    ) { return false; }
+    ) {
+      return false;
+    }
     return true;
   }
 }
