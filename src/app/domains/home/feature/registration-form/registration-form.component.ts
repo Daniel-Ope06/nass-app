@@ -68,6 +68,15 @@ export class RegistrationFormComponent {
         this.student.fullName = this.student.fullName.trim();
         this.student.matricNumber = this.student.matricNumber.trim();
         this.student.schoolEmail = this.student.schoolEmail.trim();
+
+        // capitalize first letter of each word
+        this.student.fullName = this.student.fullName
+          .split(' ')
+          .map(
+            (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+          )
+          .join(' ');
+
         await this.studentService.registerStudent(this.student);
         this.showVerifyModal = true;
       }
