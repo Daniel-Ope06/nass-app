@@ -19,7 +19,7 @@ export class RegistrationFormComponent {
   student: Student = {
     fullName: '',
     matricNumber: '',
-    level: '',
+    // level: '',
     department: '',
     schoolEmail: '',
     verified: false,
@@ -30,9 +30,9 @@ export class RegistrationFormComponent {
   showSchoolEmailError: boolean = false;
   showVerifyModal: boolean = false;
 
-  onLevelChange(event: any) {
-    this.student.level = event.target.value;
-  }
+  // onLevelChange(event: any) {
+  //   this.student.level = event.target.value;
+  // }
 
   onDepartmentChange(event: any) {
     this.student.department = event.target.value;
@@ -42,7 +42,7 @@ export class RegistrationFormComponent {
     return !(
       this.student.fullName.trim() === '' ||
       this.student.matricNumber.trim() === '' ||
-      this.student.level === '' ||
+      // this.student.level === '' ||
       this.student.department === '' ||
       this.student.schoolEmail.trim() === ''
     );
@@ -85,7 +85,7 @@ export class RegistrationFormComponent {
       this.form.nativeElement.reset();
       this.student.fullName = '';
       this.student.matricNumber = '';
-      this.student.level = '';
+      // this.student.level = '';
       this.student.department = '';
       this.student.schoolEmail = '';
     } else {
