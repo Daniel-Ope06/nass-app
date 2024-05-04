@@ -2,83 +2,88 @@ $tablet-breakpoint: 1024px;
 $mobile-breakpoint: 768px;
 
 section {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+  position: relative;
+  min-height: 8rem;
+  border-radius: 0.75rem;
+  aspect-ratio: 1440 / 500;
+  animation: skeleton-loading 1s linear infinite alternate;
 
-    height: 12rem;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    background: url("../../../../../assets/images/vote-banner.png") no-repeat center center;
-    background-size: cover;
-
-    @media (max-width: $tablet-breakpoint) { padding: 1rem 1.5rem; }
-
-    @media (max-width: $mobile-breakpoint) {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding: 2rem 1rem;
-    }
+  @media (max-width: $mobile-breakpoint) {
+    min-height: 4rem;
+    margin-bottom: 4rem;
+    aspect-ratio: 640 / 500;
+  }
 }
 
-.text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.75rem;
+@keyframes skeleton-loading {
+  0% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
+.desktop-img,
+.mobile-img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.desktop-img {
+  @media (max-width: $mobile-breakpoint) {
+    display: none;
+  }
+}
+
+.mobile-img {
+  display: none;
+  @media (max-width: $mobile-breakpoint) {
+    display: block;
+  }
+}
+
+.join-btn {
+  text-decoration: none;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+
+  display: flex;
+  align-items: center;
+
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.95rem 0.75rem;
+  background-color: #25335d;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  span {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 0;
-    width: 55%;
+  }
 
-    @media (max-width: $tablet-breakpoint) { width: 70%; }
+  img {
+    width: 1.5rem;
+    object-fit: contain;
+    transform: rotate(-45deg);
+  }
 
-    @media (max-width: $mobile-breakpoint) {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        width: 100%;
-    }
-}
+  &:hover {
+    background-color: lighten(#25335d, 10%);
+  }
 
-.vote-btn {
-    display: flex;
-    align-items: center;
-
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-
-    span {
-        font-family: 'Inter', sans-serif;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #FFFFFF;
-        margin: 0;
-    }
-
-    img {
-        height: 1.75rem;
-        object-fit: contain;
-        transform: rotate(-45deg);
-    }
-
-    &:disabled {
-        cursor: not-allowed;
-        opacity: 0.5;
-    }
-
-    &:disabled:hover {
-        span { text-decoration: none; }
-    }
-
+  @media (max-width: $mobile-breakpoint) {
+    bottom: -4rem;
+    right: 0;
     &:hover {
-        span { text-decoration: underline; }
+      background-color: #25335d;
     }
-
-    @media (max-width: $mobile-breakpoint) {
-        span { font-size: 1.25rem; }
-
-        &:hover {
-            span { text-decoration: none; }
-        }
-    }
+  }
 }
