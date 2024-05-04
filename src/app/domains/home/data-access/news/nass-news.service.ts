@@ -14,6 +14,6 @@ export class NassNewsService {
     querySnapshot.forEach((doc) => {
       news.push(doc.data() as Slide);
     });
-    return news;
+    return news.reverse();
   }
 }
