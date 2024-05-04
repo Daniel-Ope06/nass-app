@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 // Import home domain components
 import { EventsSliderComponent } from './ui/events-slider/events-slider.component';
 import { FooterComponent } from '../shared/ui/footer/footer.component';
+import { GdscBannerComponent } from './ui/gdsc-banner/gdsc-banner.component';
 import { GoalSectionComponent } from './ui/goal-section/goal-section.component';
 import { HeroCarouselComponent } from './ui/hero-carousel/hero-carousel.component';
 import { NavbarComponent } from '../shared/ui/navbar/navbar.component';
 import { NewsSliderComponent } from './ui/news-slider/news-slider.component';
 import { RegistrationFormComponent } from './feature/registration-form/registration-form.component';
 import { SuggestionFormComponent } from './feature/suggestion-form/suggestion-form.component';
-import { VoteBannerComponent } from './ui/vote-banner/vote-banner.component';
 
 @Component({
   selector: 'home',
@@ -17,13 +17,13 @@ import { VoteBannerComponent } from './ui/vote-banner/vote-banner.component';
   imports: [
     EventsSliderComponent,
     FooterComponent,
+    GdscBannerComponent,
     GoalSectionComponent,
     HeroCarouselComponent,
     NavbarComponent,
     NewsSliderComponent,
     RegistrationFormComponent,
     SuggestionFormComponent,
-    VoteBannerComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
