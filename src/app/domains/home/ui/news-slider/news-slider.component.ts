@@ -15,7 +15,7 @@ export class NewsSliderComponent {
   forms: Slide[] = [];
 
   ngOnInit(): void {
-    this.nassNewsService.getAllForms().then((forms) => {
+    this.nassNewsService.getAllNews().then((forms) => {
       this.forms = forms;
     });
   }
